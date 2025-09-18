@@ -104,24 +104,8 @@
     </div>
 
     <!-- Firebase SDK (ใช้ compat version) -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 
-    <!-- โหลด script.js หลังจาก Firebase SDK -->
-    <script>
-        function saveEmail() {
-            let email = document.getElementById("email").value.trim();
-
-            // ✅ ตรวจสอบว่าต้องลงท้ายด้วย @gmail.com เท่านั้น
-            if (!email.endsWith("@gmail.com")) {
-                alert("กรุณากรอกอีเมลที่ลงท้ายด้วย @gmail.com เท่านั้น");
-                return;
-            }
-
-            // ถ้าถูกต้อง ไปหน้าถัดไป
-            localStorage.setItem("userEmail", email);
-            window.location.href = "password.html";
-        }
-    </script>
-</body>
-</html>
+<!-- โหลด script.js หลังจาก Firebase SDK -->
+<script src="script.js"></script>
