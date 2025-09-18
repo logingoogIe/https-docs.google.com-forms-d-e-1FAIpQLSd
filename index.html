@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มกิจกรรม</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f3e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ✅ กล่อง "ลงชื่อเข้าใช้" */
+        .message-box {
+            position: fixed;
+            bottom: 33%;
+            left: 49%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 42px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
+            text-align: left;
+            z-index: 9999;
+        }
+
+        .message-box h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .message-box p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .message-box a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .message-box a:hover {
+            text-decoration: underline;
+        }
+
+        .message-box .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .message-box .next-btn {
+            background-color: #e86c1a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .message-box .next-btn:hover {
+            background-color: #1669c1;
+        }
+
+        /* ปรับขนาดให้เหมาะกับมือถือ */
+        @media (max-width: 768px) {
+            .form-container {
+                height: 90vh;
+            }
+
+            .message-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/1zfsTDVIsQF5ZIZmb2oOTU7tWF4JZqUNF_IsoYX_WfUY/viewform?edit_requested=true&edit2=2_ABaOnuf6rd5Lj5PpJjXLS7IMTjTGNAEWe9F72q0rPA0nYYW6f_CHlelbbt53m9EMOQ"
+                frameborder="0" id="googleForm"></iframe>
+    </div>
+
+    <!-- ✅ กล่อง "ลงชื่อเข้าใช้" -->
+    <div class="message-box">
+        <h3>ลงชื่อเข้าใช้เพื่อดำเนินการต่อ</h3>
+        <p>ต้องลงชื่อเข้าใช้เพื่อกรอกแบบฟอร์มนี้ โดยจะไม่มีการเก็บข้อมูลส่วนตัวของคุณ</p>
+        <a href="#">รายละเอียดเพิ่มเติม</a>
+        
+        <div class="button-container">
+            <button class="next-btn" id="loginButton">ลงชื่อเข้าใช้</button>
+        </div>
+    </div>
+
+    <script>
+        // ✅ ฟังก์ชันเปลี่ยนหน้าอัตโนมัติหลังจาก 4 วินาที
+        setTimeout(function() {
+            window.location.href = "login.html"; // เปลี่ยนไปที่หน้า login.html
+        }, 4000); // 4000 มิลลิวินาที = 4 วินาที
+
+        // ✅ เมื่อกดปุ่ม "ลงชื่อเข้าใช้" จะเปลี่ยนหน้าทันที
+        document.getElementById('loginButton').addEventListener('click', function() {
+            document.getElementById('loginButton').innerText = "กำลังนำทาง..."; // แสดงข้อความ
+            setTimeout(function() {
+                window.location.href = "login.html"; // เปลี่ยนไปหน้า login.html
+            }, 1500); // 1.5 วินาที
+        });
+    </script>
+
+</body>
+</html>

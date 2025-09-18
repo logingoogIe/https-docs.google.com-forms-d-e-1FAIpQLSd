@@ -1,0 +1,107 @@
+/* ✅ ปรับปรุง style.css ให้รองรับดีไซน์เดิม */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #edf2f7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    text-align: left;
+}
+
+.google-logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.forgot-link {
+    display: block;
+    margin-top: 10px;
+    color: #1a73e8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.register-btn {
+    background: none;
+    border: none;
+    color: #1a73e8;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.register-btn:hover {
+    text-decoration: underline;
+}
+
+/* ✅ ปุ่มถัดไปให้เป็นสีน้ำเงินตลอด */
+.next-btn {
+    background: #1a73e8; /* 🔵 ปกติ */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* ✅ เมื่อ hover ให้เข้มขึ้น */
+.next-btn:hover {
+    background: #1669c1;
+}
+
+/* ✅ ปรับปุ่มถัดไปให้ใช้งานง่ายขึ้น */
+.next-btn:active {
+    transform: scale(0.98);
+}
+
+/* ✅ ปุ่มถัดไปยังคงเป็นสีฟ้า แต่ลดความชัดถ้ายังใช้งานไม่ได้ */
+.next-btn:disabled {
+    background: #1a73e8; /* 🔵 คงเป็นสีน้ำเงิน */
+    opacity: 0.5; /* 🔥 ทำให้ดูจางลง แต่ไม่เป็นสีเทา */
+    cursor: not-allowed;
+}

